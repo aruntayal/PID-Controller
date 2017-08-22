@@ -3,9 +3,10 @@ The project is about  implementing a PID controller in C++ to maneuver the vehic
 
 Tune the PID hyperparameters P,I and D in order to succcessfully maneuver the vehicle around the track.
 ___
-##Reflection
 
-###Approach used to tune Hyperparameters
+## Reflection
+
+### Approach used to tune Hyperparameters
 Firstly started with low value of P and keeping I and D as zero. For low value of P it immediately went off the track. Kept on increasing the P till the car remain largely on track(though oscillating very heavily).
 
 After gettting a suitable value of P,I next targeted to reduce the car oscillation on track which was happening due to overshooting. Kept on increasing value of D hyperparameter till the car gets largely stable on track.
