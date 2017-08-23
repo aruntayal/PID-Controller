@@ -35,21 +35,26 @@ int main(int argc, char* argv[])
   uWS::Hub h;
 
   PID pid_steering;
-  PID pid_throttle;
- 
-
+  
+  double kp_steering ;
+  double ki_steering ;
+  double kd_steering ;
   if(argc == 4)
   {
-    double kp_steering = atof(argv[1]);
-    double ki_steering = atof(argv[2]);
-    double kd_steering = atof(argv[3]);
+    kp_steering = atof(argv[1]);
+    ki_steering = atof(argv[2]);
+    kd_steering = atof(argv[3]);
     pid_steering.Init(kp_steering, ki_steering,kd_steering);
     
   }
   else
   {
-    pid_steering.Init(0.1, 0.004,4);
+    kp_steering = 0.1;
+    ki_steering = 0.004;
+    kd_steering = 4;
+    pid_steering.Init(kp_steering,ki_steering,kd_steering);
   }
+  
 
   
 
